@@ -13,10 +13,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Install Docker
-      run:  sudo yum update && sudo yum install docker
-    - name: Start Docker
-      run: sudo systemctl start docker && sudo systemctl enable docker
     - name: Pull Docker image
       run: sudo docker pull ${{secrets.DOCKER_USERNAME}}/cicd-pipeline:latest
     - name: Delete Old Docker container
